@@ -1,0 +1,8 @@
+name: import-code-to-image
+on: [push]
+jobs:
+  checkout-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Repo checked out."
