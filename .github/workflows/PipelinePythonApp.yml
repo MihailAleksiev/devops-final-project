@@ -16,3 +16,4 @@ jobs:
         pip install pylint
     - run: python lint_test.py
     - run: echo "Job status is ${{ job.status }}."
+    - run: echo "${{secrets.PASSWORD}}"
