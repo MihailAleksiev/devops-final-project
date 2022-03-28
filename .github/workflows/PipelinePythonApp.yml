@@ -1,5 +1,8 @@
 name: Pipeline-PythonApp
-on: [push]
+on:
+  push:
+    branches:
+      - main 
 jobs:
   check-code-pylint:
     runs-on: ubuntu-latest
