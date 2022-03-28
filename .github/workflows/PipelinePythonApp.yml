@@ -4,7 +4,19 @@ on:
     branches:
       - branch-one
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with: 
+        python-version: 3.9
+    - run: echo "Job status is ${{ job.status }}."
+    - run: echo "${{secrets.PASSWORD}}"
   check-code-pylint:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
@@ -20,6 +32,7 @@ jobs:
     - run: echo "Job status is ${{ job.status }}."
     - run: echo "${{secrets.PASSWORD}}"
   check-code-style:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
