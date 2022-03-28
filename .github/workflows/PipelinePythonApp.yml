@@ -1,7 +1,7 @@
-name: check-code-with-pylint
+name: Pipeline-PythonApp
 on: [push]
 jobs:
-  check-code:
+  check-code-pylint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
