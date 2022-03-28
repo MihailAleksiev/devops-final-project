@@ -72,3 +72,9 @@ jobs:
       run: |
         python --version
         python3 -m doctest factorial.py
+  deploy-to-production:
+    needs: unit-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying to cloud
+        run: echo "Deployed successfully"
