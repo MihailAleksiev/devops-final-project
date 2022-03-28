@@ -2,7 +2,7 @@ name: Pipeline-PythonApp
 on:
   push:
     branches:
-      - main 
+      - branch-one
 jobs:
   check-code-pylint:
     runs-on: ubuntu-latest
