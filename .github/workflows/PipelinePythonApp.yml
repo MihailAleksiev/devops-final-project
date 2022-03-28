@@ -89,7 +89,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   deploy-to-production:
-    needs: unit-test
+    needs: [ unit-test, sonarcloud-SAST ]
     runs-on: ubuntu-latest
     steps:
       - name: Deploying to cloud
