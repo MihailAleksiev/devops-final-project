@@ -50,7 +50,10 @@ jobs:
         pycodestyle *.py
   simulate-build:
     needs: check-code-style
-    runs-on: [ ubuntu-latest, macos-latest, windows-latest ]
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
